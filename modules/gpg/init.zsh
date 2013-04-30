@@ -13,8 +13,8 @@ fi
 # Source module files.
 source "${0:h}/agent.zsh"
 
-# Disable GUI prompts during SSH connections.
-if [[ -n "$SSH_CONNECTION" ]]; then
+# Disable GUI prompts inside CLI.
+if [[ -c "$GPG_TTY" ]]; then
   export PINENTRY_USER_DATA='USE_CURSES=1'
 fi
 
