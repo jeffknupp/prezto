@@ -24,13 +24,15 @@ ps -U "$USER" -o 'command' | egrep -q '^gpg-agent( |$)' \
       ${_gpg_agent_ssh_support:+'--enable-ssh-support'} \
       --write-env-file "$_gpg_agent_info" > /dev/null
 
-chmod 600 "${_gpg_agent_info}" 2> /dev/null
-source "${_gpg_agent_info}" > /dev/null
-
-export GPG_AGENT_INFO
+# Export variables.
 export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK
-export SSH_AGENT_PID
 
+if [[ -s "$_gpg_agent_info" ]]; then
+  while read line; do
+    eval "export $line"
+  done < "$_gpg_agent_info"
+fi
+
+# Clean up.
 unset _gpg_agent_{info,ssh_support}
 
