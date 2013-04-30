@@ -1,7 +1,7 @@
 GPG
 ===
 
-Provides for an easier use of [GPG][1] and [gpg-agent][2].
+Provides for an easier use of [GPG][1] by setting up [gpg-agent][2].
 
 Authors
 -------
