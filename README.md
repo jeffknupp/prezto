@@ -1,3 +1,5 @@
+*My personal configuration for prezto (easier to just clone everything onto a new machine then messing with copying configuration files).*
+
 Prezto — Instantly Awesome Zsh
 ==============================
 
@@ -17,7 +19,7 @@ version is 4.3.10.
 
   2. Clone the repository:
 
-        git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        git clone --recursive git@github.com:jeffknupp/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
   3. Create a new Zsh configuration by copying the Zsh configuration files
      provided:
