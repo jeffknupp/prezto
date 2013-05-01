@@ -22,7 +22,7 @@ function prompt_knupp_pwd {
   fi
 }
 
-function prompt_knupp_precmd{
+function prompt_knupp_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
@@ -44,7 +44,7 @@ function prompt_knupp_setup {
   autoload -Uz add-zsh-hook
 
   # Add hook for calling git-info before each command.
-  add-zsh-hook precmd prompt_knuppsorin_precmd
+  add-zsh-hook precmd prompt_knupp_precmd
 
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
   zstyle ':prezto:module:editor:info:keymap:primary' format ' %B%F{red}❯%F{yellow}❯%F{green}❯%f%b'
