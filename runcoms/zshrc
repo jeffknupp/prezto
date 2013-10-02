@@ -31,6 +31,15 @@ alias lsd='ls -1 -d *(/)'
 alias svn='noglob svn'
 alias find-exec='noglob find-exec'
 
+# aliases for searching and installing packages on various systems
+# TODO: detect system and use single command to search and install
+# that is system agnostic
+alias u-install='sudo apt-get install $1'
+alias u-search='apt-cache search $1'
+
+alias y-install='sudo yum install $1'
+alias y-search='yum search $1'
+
 # Ctrl-R for incremental search in both vi modes
 bindkey "^R" history-incremental-search-backward
 ssh-add
