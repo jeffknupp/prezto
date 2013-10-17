@@ -8,7 +8,7 @@ Load modules in *zpreztorc*. The order matters.
 Archive
 -------
 
-Provides functions to extract and list popular archive formats.
+Provides functions to list and extract archives.
 
 Command-Not-Found
 -----------------
@@ -46,10 +46,10 @@ GNU Utility
 
 Provides for the interactive use of GNU utilities on non-GNU systems.
 
-GPG-Agent
+GPG
 ---------
 
-Provides for an easier use of gpg-agent.
+Provides for an easier use of GPG by setting up gpg-agent.
 
 Haskell
 -------
@@ -70,6 +70,11 @@ History
 -------
 
 Sets history options and defines history aliases.
+
+Homebrew
+--------
+
+Defines Homebrew aliases.
 
 Macports
 --------
