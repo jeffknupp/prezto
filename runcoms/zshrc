@@ -46,4 +46,3 @@ alias reload='source ~/.zshrc'
 . ~/tools/powerline/powerline/bindings/zsh/powerline.zsh
 # Ctrl-R for incremental search in both vi modes
 bindkey "^R" history-incremental-search-backward
-ssh-add
