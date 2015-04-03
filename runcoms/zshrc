@@ -6,15 +6,28 @@
 #
 
 # Include stuff that needs to be set before sourcing init.zsh
-source ~/.zshrc.pre
 module_path=($module_path /usr/local/lib/zpython)
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+prompt pure
+
 # Include machine specific options (i.e. one for work, one for home, one for VPS
 # hosts, etc.)
+
+# antigen package management
+source ~/code/github_code/config_files/antigen/antigen.zsh
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle kennethreitz/autoenv
+antigen bundle pip
+antigen bundle git
+antigen bundle command-not-found
+
+antigen apply
+
 source ~/.zshrc.include
 
 alias l='ls -lrt'
@@ -25,7 +38,7 @@ setopt extended_glob
 setopt CLOBBER
 
 # list only directories
-alias lsd='ls -1 -d *(/)' 
+alias lsd='ls -1 -d *(/)'
 
 # Don't try to glob when running 'svn ...'
 alias svn='noglob svn'
@@ -43,6 +56,9 @@ alias y-search='yum search $1'
 alias g='git'
 alias reload='source ~/.zshrc'
 
-. ~/tools/powerline/powerline/bindings/zsh/powerline.zsh
+
+# . ~/tools/powerline/powerline/bindings/zsh/powerline.zsh
+
+
 # Ctrl-R for incremental search in both vi modes
 bindkey "^R" history-incremental-search-backward
