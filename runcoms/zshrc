@@ -12,23 +12,18 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-prompt pure
-
 # Include machine specific options (i.e. one for work, one for home, one for VPS
 # hosts, etc.)
 
 # antigen package management
-source ~/code/github_code/config_files/antigen/antigen.zsh
+source ~/dotfiles/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle kennethreitz/autoenv
-antigen bundle pip
-antigen bundle git
-antigen bundle command-not-found
 
 antigen apply
 
-source ~/.zshrc.include
+#source ~/.zshrc.include
 
 alias l='ls -lrt'
 alias mmv='noglob zmv -W'
